@@ -15,7 +15,7 @@ stages:
 - stage: 'Build'
   variables:
     wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
-    dotnetSdkVersion: '3.1.300'
+    dotnetSdkVersion: '7.0'
     buildConfiguration: 'Release'
   jobs: 
   - template: dotnet-core-web/dotnet-core-build-simple-web-app.yml@templates
