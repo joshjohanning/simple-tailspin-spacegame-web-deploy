@@ -8,7 +8,7 @@ resources:
   - repository: templates
     type: github
     name: joshjohanning/pipeline-templates
-    endpoint: joshjohanning
+    endpoint: github.com_joshjohanning
     ref: refs/tags/v0.0.1
 
 stages:
