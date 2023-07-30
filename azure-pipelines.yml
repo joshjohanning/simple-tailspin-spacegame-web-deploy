@@ -42,19 +42,16 @@ stages:
   - template: dotnet-core-web/dotnet-core-deploy-simple-web-app.yml@templates
     parameters:
       name: 'Tailspin.SpaceGame.Web'
-      runDeploy: true
       environment: 
         name: 'dev'
-      vmImage: 'ubuntu-latest'
       replaceTokensTargetFiles: |
           **/appsettings.tokenize.json => appsettings.json
           **/connectionstrings.tokenize.json => connectionstrings.json
       appSettingsEdits: '-ASPNETCORE_ENVIRONMENT Development'
       jsonVariableSubstituion: 'appsettings.json'
       azureSubscription: '${{ variables.azureSubscription }}'
-      websiteName: 'app-tailspin-DEV'
+      websiteName: 'app-tailspin-demo-DEV'
       resourceGroupName: 'rg-tailspin-terraform-DEV'
-      slotName: 'swap'
       deployToSlot: false
 
 - stage: deployProd
@@ -68,17 +65,14 @@ stages:
   - template: dotnet-core-web/dotnet-core-deploy-simple-web-app.yml@templates
     parameters:
       name: 'Tailspin.SpaceGame.Web'
-      runDeploy: true
       environment: 
         name: 'prod'
-      vmImage: 'ubuntu-latest'
       replaceTokensTargetFiles: |
           **/appsettings.tokenize.json => appsettings.json
           **/connectionstrings.tokenize.json => connectionstrings.json
       appSettingsEdits: '-ASPNETCORE_ENVIRONMENT Production'
       jsonVariableSubstituion: 'appsettings.json'
       azureSubscription: '${{ variables.azureSubscription }}'
-      websiteName: 'app-tailspin-PROD'
+      websiteName: 'app-tailspin-demo-PROD'
       resourceGroupName: 'rg-tailspin-terraform-PROD'
-      slotName: 'swap'
       deployToSlot: false
