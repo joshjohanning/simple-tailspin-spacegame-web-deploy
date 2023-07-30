@@ -9,7 +9,7 @@ resources:
     type: github
     name: joshjohanning/pipeline-templates
     endpoint: github.com_joshjohanning
-    ref: refs/heads/joshjohanning/add-deployToSlot-parameter
+    ref: refs/tags/v0.0.2
 
 stages:
 - stage: 'Build'
