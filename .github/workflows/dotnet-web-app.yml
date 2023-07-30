@@ -1,0 +1,27 @@
+name: .NET Web App
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: restore
+      working-directory: Tailspin.SpaceGame.Web
+      run: dotnet restore
+
+    - name: build
+      working-directory: Tailspin.SpaceGame.Web
+      run: dotnet build
+      
+    - name: test
+      working-directory: Tailspin.SpaceGame.Web.Tests
+      run: dotnet test
+      
