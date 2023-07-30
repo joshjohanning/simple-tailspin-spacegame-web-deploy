@@ -55,6 +55,7 @@ stages:
       websiteName: 'app-tailspin-DEV'
       resourceGroupName: 'rg-tailspin-terraform-DEV'
       slotName: 'swap'
+      deployToSlot: false
 
 - stage: deployProd
   displayName: Deploy to Prod
@@ -80,3 +81,4 @@ stages:
       websiteName: 'app-tailspin-PROD'
       resourceGroupName: 'rg-tailspin-terraform-PROD'
       slotName: 'swap'
+      deployToSlot: false
